@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'signupPage.dart';
+import 'signupPageHeader.dart';
 
-import 'Header.dart';
-import 'InputWrapper.dart';
-
-class LoginPage extends StatelessWidget {
+class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,10 +15,14 @@ class LoginPage extends StatelessWidget {
           ),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Header(),
-            InputWrapper(),
+          children: [
+            SignupPageHeader(),
+            SizedBox(
+              height: 50,
+            ),
+            Expanded(
+              child: SignupPage(),
+            ),
           ],
         ),
       ),

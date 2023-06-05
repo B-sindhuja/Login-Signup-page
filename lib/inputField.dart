@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'navigationScreen.dart';
-import 'navigator.dart';
 
 class InputField extends StatefulWidget {
   InputFieldState createState() => InputFieldState();
@@ -47,23 +45,6 @@ class InputFieldState extends State<InputField> {
         SizedBox(
           height: 10,
         ),
-        Container(
-            height: 40,
-            margin: EdgeInsets.symmetric(horizontal: 75),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => HomePage(),
-                  ),
-                );
-              },
-              child: Text(
-                'LOGIN',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ))
       ],
     );
   }

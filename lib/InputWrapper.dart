@@ -1,19 +1,16 @@
-import 'dart:io';
-
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-
+import 'signUp.dart';
 import 'InputField.dart';
+import 'nav.dart';
 
 class InputWrapper extends StatelessWidget {
-  _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      //throw 'couldnt launch';
-    }
-  }
+  // _launchURL(String url) async {
+  //   if (await canLaunch(url)) {
+  //     await launch(url);
+  //   } else {
+  //     //throw 'couldnt launch';
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -33,24 +30,47 @@ class InputWrapper extends StatelessWidget {
           //   height: 5,
           // ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text(
-                'Don\' t have an account?',
-                style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold),
-              ),
-              TextButton(
-                child: Text(
-                  "Register here",
-                  style: TextStyle(
-                      color: Colors.purple, fontWeight: FontWeight.bold),
-                ),
+              // Text(
+              //   'Don\' t have an account?',
+              //   style: TextStyle(
+              //       color: Colors.black87,
+              //       fontSize: 15,
+              //       fontWeight: FontWeight.bold),
+              // ),
+              Container(
+                  //height: 40,
+                  //margin: EdgeInsets.symmetric(horizontal: 75
+                  child: ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
                 onPressed: () {
-                  //_launchURL('flutter.dev');
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => Nav(),
+                    ),
+                  );
                 },
+                child: Text(
+                  'Sign In',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              )),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    //backgroundColor: Colors.black,
+                    backgroundColor: Colors.black),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => SignUp(),
+                    ),
+                  );
+                },
+                child: Text(
+                  'Sign Up',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               )
             ],
           ),
